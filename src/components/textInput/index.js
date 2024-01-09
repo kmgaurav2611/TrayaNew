@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import PropTypes from 'prop-types';
 import * as React from 'react';
-import { TextInput as Input } from 'react-native-paper';
+import {TextInput as Input} from 'react-native-paper';
 
-import { colors } from '../../static/colors';
+import {colors} from '../../static/colors';
 
-const TextInput = (props) => {
-  const { text, setText, label } = props;
+const TextInput = props => {
+  const {text, setText, label} = props;
 
   return (
     <Input
@@ -17,7 +17,7 @@ const TextInput = (props) => {
       textColor={colors.BLACK}
       value={text}
       {...props}
-      onChangeText={(input) => setText(input)}
+      onChangeText={input => setText(input)}
     />
   );
 };
@@ -25,7 +25,7 @@ const TextInput = (props) => {
 TextInput.propTypes = {
   label: PropTypes.string.isRequired,
   setText: PropTypes.func.isRequired,
-  text: PropTypes.string.isRequired
+  text: PropTypes.string.isRequired,
 };
 
 export default TextInput;

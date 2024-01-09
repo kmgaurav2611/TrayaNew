@@ -63,7 +63,7 @@ const RootNavigator = () => (
     screenOptions={{
       headerShown: false,
     }}>
-    {/* <Stack.Screen component={Authentication} name="Authentication" /> */}
+    <Stack.Screen component={Authentication} name="Authentication" />
     <Stack.Screen component={MyTabs} name="Home" />
   </Stack.Navigator>
 );
