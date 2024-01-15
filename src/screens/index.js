@@ -1,6 +1,13 @@
 import HomeScreen from './homeScreen';
 import InputScreen from './InputScreen';
-import OtpScreen from './otpScreen';
+import MobileNumberScreen from './mobileNumberScreen';
 import ProfileScreen from './profileScreen';
+import CheckoutScreen from './checkoutScreen';
 
-export {HomeScreen, InputScreen, OtpScreen, ProfileScreen};
+export {
+  HomeScreen,
+  InputScreen,
+  MobileNumberScreen,
+  ProfileScreen,
+  CheckoutScreen,
+};

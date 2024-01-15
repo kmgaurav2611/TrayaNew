@@ -4,25 +4,30 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-// import ConfirmationScreen from '../screens/confirmation';
-// import ForgotPasswordScreen from '../screens/forgotPassword';
-// import HomeScreen from '../screens/home';
-// import LoginScreen from '../screens/login';
-// import OnboardingScreen from '../screens/onboarding';
-// import RegisterScreen from '../screens/register';
-// import SettingsScreen from '../screens/settings';
-// import UpdatePasswordScreen from '../screens/updatePassword';
-
-import {OtpScreen, ProfileScreen, InputScreen, HomeScreen} from '../screens';
+import {
+  MobileNumberScreen,
+  ProfileScreen,
+  InputScreen,
+  HomeScreen,
+  CheckoutScreen,
+} from '../screens';
 
 const Stack = createNativeStackNavigator();
 
 const Tab = createMaterialBottomTabNavigator();
 
+const HomeStack = createNativeStackNavigator();
+const HomeStackNavigator = () => (
+  <HomeStack.Navigator>
+    <HomeStack.Screen name="Home" component={HomeScreen} />
+    <HomeStack.Screen name="Checkout" component={CheckoutScreen} />
+  </HomeStack.Navigator>
+);
+
 const MyTabs = () => (
   <Tab.Navigator>
     <Tab.Screen
-      component={HomeScreen}
+      component={HomeStackNavigator}
       name="Traya"
       options={{
         tabBarIcon: ({color}) => (
@@ -38,7 +43,7 @@ const MyTabs = () => (
         tabBarIcon: ({color}) => (
           <MaterialCommunityIcons
             color={color}
-            name="table-settings"
+            name="account-settings"
             size={26}
           />
         ),
@@ -53,7 +58,7 @@ const Authentication = () => (
     screenOptions={{
       headerShown: false,
     }}>
-    <Stack.Screen component={OtpScreen} name="Login" />
+    <Stack.Screen component={MobileNumberScreen} name="Login" />
     <Stack.Screen component={InputScreen} name="Register" />
   </Stack.Navigator>
 );

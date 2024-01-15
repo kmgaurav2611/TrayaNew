@@ -18,14 +18,20 @@ import {
 import {NavigationContainer} from '@react-navigation/native';
 import {PaperProvider} from 'react-native-paper';
 import RootNavigator from './src/navigation/rootNavigator';
+import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 function App() {
   return (
-    <NavigationContainer>
-      <PaperProvider>
-        <RootNavigator />
-      </PaperProvider>
-    </NavigationContainer>
+    <GestureHandlerRootView style={{flex: 1}}>
+      <BottomSheetModalProvider>
+        <NavigationContainer>
+          <PaperProvider>
+            <RootNavigator />
+          </PaperProvider>
+        </NavigationContainer>
+      </BottomSheetModalProvider>
+    </GestureHandlerRootView>
   );
 }
 

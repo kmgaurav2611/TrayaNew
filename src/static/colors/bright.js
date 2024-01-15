@@ -9,7 +9,10 @@ const colors = {
   TEXT_LINK: '#574FDE',
   TEXT_PRIMARY: '#97A2B6',
   TEXT_WARNING: '#f54766',
-  WHITE: '#ffffff'
+  WHITE: '#ffffff',
+  PARROT_GREEN: '#b6d340',
+  ALMOST_WHITE: '#FBFCFD',
+  LIGHT_WHITE: '#F2F3EB',
 };
 
 export default colors;

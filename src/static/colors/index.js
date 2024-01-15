@@ -1,1 +1,1 @@
-export { default as colors } from './bright';
+export {default as colors} from './bright';

@@ -2,6 +2,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {Text as RNText} from 'react-native';
+import {colors} from '../../static/colors';
 
 const Text = props => {
   const {children, size, style} = props;
@@ -15,7 +16,9 @@ const Text = props => {
   };
 
   return (
-    <RNText {...props} style={[{fontSize: TextSizes[size]}, style]}>
+    <RNText
+      {...props}
+      style={[{fontSize: TextSizes[size], color: colors.BLACK}, style]}>
       {children}
     </RNText>
   );
@@ -24,10 +27,12 @@ const Text = props => {
 Text.propTypes = {
   children: PropTypes.element.isRequired,
   size: PropTypes.string,
+  style: PropTypes.array || PropTypes.object,
 };
 
 Text.defaultProps = {
   size: 'M',
+  style: {},
 };
 
 export default Text;

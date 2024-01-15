@@ -1,12 +1,20 @@
-import {Text, View} from 'react-native';
+import {SafeAreaView, ScrollView} from 'react-native';
 import React from 'react';
 import {styles} from './style';
+import {CheckoutBar} from '../../components';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
+  const onProceed = () => {
+    navigation.navigate('Checkout');
+  };
   return (
-    <View>
-      <Text>HomeScreen</Text>
-    </View>
+    <SafeAreaView style={styles.safeAreaContainer}>
+      <ScrollView
+        automaticallyAdjustKeyboardInsets={true}
+        contentContainerStyle={styles.scrollViewContainer}>
+        <CheckoutBar onButtonPressed={onProceed} />
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
