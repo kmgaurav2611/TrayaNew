@@ -1,5 +1,5 @@
 import {View, SafeAreaView, ScrollView} from 'react-native';
-import React, {useState, useRef, useMemo, useCallback, useEffect} from 'react';
+import React, {useState, useRef, useMemo, useCallback} from 'react';
 import {styles} from './style';
 import {Button, Text, TextInput} from '../../components';
 import {colors} from '../../static/colors';
@@ -33,9 +33,9 @@ const CheckoutScreen = ({}) => {
 
   const snapPoints = useMemo(() => ['50%'], []);
 
-  // const handleSheetChanges = useCallback(index => {
-  //   console.log('handleSheetChanges', index);
-  // }, []);
+  const handleSheetChanges = useCallback(index => {
+    // console.log('handleSheetChanges', index);
+  }, []);
 
   const openBottomSheet = () => {
     if (bottomSheetRef.current) {
